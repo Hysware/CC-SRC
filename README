@@ -1,0 +1,24 @@
+Put this file in a folder.
+Then make some changes,usually just change with loop.
+let it run. command:./run
+
+!!replace also need to be changed with different reaction.
+
+BUGS FIXED:
+
+
+20231120:In file 111.sh, L53: b2=$(echo "scale=3;$beta2/1000"|bc),scale correspond to the precision of numbers.
+
+**********************************
+parameter range:
+
+beta2:
+beta2_stepsize:
+beta3:
+beta3_stepsize:
+beta4:
+beta4_stepsize:
+energy of beam:
+energy_stepsize:
+
+*********************************
