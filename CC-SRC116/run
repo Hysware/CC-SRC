@@ -1,0 +1,22 @@
+# 可以将程序分在多个后台运行
+for((i=280;i<380;i+=10))  # 建立10个后台
+
+###################################################
+do
+  for((j=50;j<150;j+=10))  
+  do
+	  screen -dmS nn$i+$j #建立一个后台
+	  # 向后台发送命令
+	  #screen -x -S b$i -p 0 -X stuff "cd /media/DATA4T2/ZhangHY/ccfull-7/\n" #进入目标文件夹
+	  
+    screen -x -S nn$i+$j -p 0 -X stuff "cd ../\n" #进入目标文件夹
+	  screen -x -S nn$i+$j -p 0 -X stuff "./CC-SRC/111.sh $i $j\n" #执行ccfull
+
+	  sleep 2
+	  #screen -x -S b$i -p 0 -X stuff $'exit\n'	
+	  #screen -S b$i -X quit
+  done
+done
+########################################################
+
+
