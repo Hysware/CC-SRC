@@ -22,3 +22,6 @@ energy of beam:
 energy_stepsize:
 
 *********************************
+
+
+lab2cm: Convert the angle in the laboratory frame to the center-of-mass frame.
