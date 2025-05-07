@@ -1,0 +1,96 @@
+16.,8.,156.,64.
+1.2,-1,1.06,1
+0.089,0.33,0.034,5
+1.276,0.104,3,1
+6.13,0.733,3,0
+0,0.,0.3
+71,1.2,0.65
+30,1.0,0.4
+0.,1.2,0.43
+1.1
+68.6628,68.6628,2
+300
+180.,180.,4.5
+50,0.05
+3.,5.
+
+%-----------------
+The first line:
+     AP,ZP,AT,ZT
+The second line:
+     RP,IVIBROTP,RT,IVIBROTT
+          (The radius parameter used in the coupling Hamiltonian)
+           (IVIBROT: option for intrinsic degree of freedom 
+                     = -1; no excitation (inert)
+                     = 0 ; vibrational coupling
+                     = 1 ; rotational coupling
+                IVIBROTP: for projectile excitation
+        IVIBROTT: for target excitation)
+The third line:
+     OMEGAT,BETAT,LAMBDAT,NPHONONT  (if IVIBROTT=0)
+     E2T,BETA2T,BETA4T,NROTT        (if IVIBROTT=1)
+          (Input for the target excitation)
+      (This line is irrelevant if IVIBROTT = -1.)
+      (NROT: the number of levels in the rotational band to be 
+                 included (up to I^pi=2*NROTT+ states are included)
+                 e.g. if NROTT=2, then 0+, 2+ and 4+ in the target 
+                 are included.)
+The 4th line: 
+     OMEGAT2,BETAT2,LAMBDAT2,NPHONONT2
+      (Input for target phonon excitation; the second mode of 
+           excitation. 
+           For example, the first mode (LAMBDAT) may be a quadrupole 
+           vib. and the second mode (LAMBDAT2) may be an octupole vib. 
+           in the target nucleus.)
+          (No second target phonon excitation if NPHONONT2=0
+               OMEGAT2, BETAT2, and LAMBDAT2 are irrelevant 
+                   if NPHONONT2=0)
+The 5th line:
+     OMEGAP,BETAP,LAMBDAP,NPHONONP  (if IVIBROTP=0)
+     E2P,BETA2P,BETA4P,NROTP        (if IVIBROTP=1)
+          (Input for the projectile excitation)
+      (This line is irrelevant if IVIBROTP = -1.)
+      (NROT: the number of levels in the rotational band to be 
+                 included (up to I^pi=2*NROTP+ states are included)
+                 e.g. if NROTP=2, then 0+, 2+ and 4+ in the projectile 
+                 are included.)
+The 6th line:
+     NTRANS,QTRANS,FTR
+          (Input for pair transfer channel)
+          (NTRANS is either 0 OR 1)
+              No transfer ch. if NTRANS=0
+                   QTRANS and FTR are irrelevant if NTRANS=0)
+          (Coupling form factor: 
+               FTRANS(R)=FTR * d VN/ dR)
+The 7th line: 
+     V0,R0,A0
+      (Potential parameters)
+The 8th line: 
+     VW,RW,AW
+      (Parameters for the imaginary part of optical potential)
+The 9th line: 
+     VWS,RWS,AWS
+      (Parameters for the surface imaginary part of optical potential)
+The 10th line:
+     RC  (the Coulomb radius)
+The 11th line:
+     EMIN,EMAX,DE
+The 12th line:
+     LMAX
+The 13th line:
+     THMIN,THMAX,DTH
+      (theta_min, theta_max, and the step to plot the angular distribution,
+           all in the unit degree and in the center of mass frame. 
+           If theta_min = theta_max, the code provides an excitation function 
+           at the fixed angle.)
+The 14th line:
+     RMAX,DR
+
+The 15th line:
+     RMIN,RCOUPCUT
+
+     (In order to avoid a numerical instability, the code solves the c.c.
+     equations from RMIN to RMAX. For the same reason, the off-diagonal
+     components of the coupling potential are assumed to be zero for
+     r < RCOUPCUT. These are justified under a strong absorption in
+     the inner region.)

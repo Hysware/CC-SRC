@@ -1,0 +1,4 @@
+## batch cal
+
+change energy for barrier. Using batch_e.sh to set energy exactly.
+When it completed, use add.sh to merge the qel.dat file to qel_all.sh
